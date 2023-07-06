@@ -7,7 +7,7 @@ def request_api_data(query_char):
     url = 'https://api.pwnedpasswords.com/range/' + query_char
     res = requests.get(url)
     if res.status_code != 200:
-        raise RuntimeError(f'Error fetching: {res.status_code}, check the api and try againgit')
+        raise RuntimeError(f'Error fetching: {res.status_code}, check the API and try again')
     return res
 
 
@@ -27,13 +27,16 @@ def pwned_api_check(password):
 
 
 def main(args):
-    for password in args:
-        count = pwned_api_check(password)
-        if count:
-            print(f'{password} was found {count} time... you should probably change your password!')
-        else:
-            print(f'{password} was NOT found. Carry on!')
-    return
+    output_file = 'password_check_results.txt'
+    with open(output_file, 'w') as file:
+        for password in args:
+            count = pwned_api_check(password)
+            if count:
+                file.write(f'{password} was found {count} time... you should probably change your password!\n')
+            else:
+                file.write(f'{password} was NOT found. Carry on!\n')
+    return 'Done!'
 
 
-main(sys.argv[1:])
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
