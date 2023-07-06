@@ -7,5 +7,5 @@ I used the password API from (https://haveibeenpwned.com), you can find more det
 
 ## Usage
 * In the command line call the password_checker file followed by as many password arguments as you would like
-* Like this `python password_checker.py arg1 arg2 arg3 etc`
+* For example) `python password_checker.py arg1 arg2 arg3 etc`
 * Your output will be recieved in a text file which will either inform you how many times your password has been found and whether you should keep the password or not
