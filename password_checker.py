@@ -11,5 +11,5 @@ def request_api_data(query_char):
 
 
 def pwned_api_check(password):
-    sha1password = hashlib.sha1(password.encode('utf-8'))
-    pass
+    sha1password = hashlib.sha1(password.encode('utf-8').hexdigest().upper())
+    return sha1password
