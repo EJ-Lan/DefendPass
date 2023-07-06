@@ -1,5 +1,5 @@
 # DefendPass
-Defend Sass is a Python scripting project which uses a password API to help inform users if their password has been breached before
+Defend Pass is a Python scripting project which uses a password API to help inform users if their password has been breached before
 
 ## Password API
 
