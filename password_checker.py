@@ -51,7 +51,7 @@ def main(args):
             count = pwned_api_check(password)
             # Write the result to the output file
             if count:
-                file.write(f'{password} was found {count} time... you should probably change your password!\n')
+                file.write(f'{password} was found {count} times... you should probably change your password!\n')
             else:
                 file.write(f'{password} was NOT found. Carry on!\n')
     # Return a completion message
